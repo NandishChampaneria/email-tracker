@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Email Tracker - Gmail",
+  "version": "0.1.0",
+  "description": "Send tracked emails from Gmail and view analytics.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://mail.google.com/*", "http://localhost:4000/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Email Tracker"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
+
