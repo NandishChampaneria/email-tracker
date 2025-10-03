@@ -42,6 +42,11 @@ export async function getGoogleAuthUrl(): Promise<string> {
     return data.url as string;
 }
 
+export async function getGoogleStatus(): Promise<{ email: string } | null> {
+    const { data } = await client.get('/api/google/status');
+    return data;
+}
+
 export async function sendEmailViaGmail(args: { to: string; subject: string; html: string }): Promise<{ uid: string }>{
     const { data } = await client.post('/api/send-email?gmail=1', args);
     return data;
