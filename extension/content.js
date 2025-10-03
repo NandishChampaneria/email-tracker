@@ -1,4 +1,4 @@
-const BASE = 'http://localhost:4000';
+const BASE = 'https://email-tracker-30kb.onrender.com';
 
 function createButton() {
   const btn = document.createElement('button');

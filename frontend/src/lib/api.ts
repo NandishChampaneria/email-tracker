@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const client = axios.create({ baseURL: 'http://localhost:4000' });
+const client = axios.create({ baseURL: 'https://email-tracker-30kb.onrender.com' });
 
 export type EmailRow = {
 	uid: string;

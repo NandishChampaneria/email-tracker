@@ -6,7 +6,8 @@ export function rewriteLinks(html: string, uid: string, appBaseUrl: string): str
 }
 
 export function injectPixel(html: string, uid: string, appBaseUrl: string): string {
-    const pixel = `<img src="${appBaseUrl}/track/open?id=${encodeURIComponent(uid)}" alt="" width="1" height="1" style="display:none" />`;
+    const ts = Date.now();
+    const pixel = `<img src="${appBaseUrl}/track/open?id=${encodeURIComponent(uid)}&ts=${ts}" alt="" width="1" height="1" style="opacity:0;display:block" aria-hidden="true" />`;
     if (html.includes('</body>')) return html.replace('</body>', `${pixel}</body>`);
     return html + pixel;
 }
